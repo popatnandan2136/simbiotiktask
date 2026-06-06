@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core/constants/app_colors.dart';
@@ -13,6 +14,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
+  Timer? _navigationTimer;
 
   // Animations
   late Animation<double> _logoScale;
@@ -103,13 +105,14 @@ class _SplashScreenState extends State<SplashScreen>
     _controller.forward();
 
     // Navigation trigger at 3000ms
-    Future.delayed(const Duration(milliseconds: 3000), () {
+    _navigationTimer = Timer(const Duration(milliseconds: 3000), () {
       Get.offAllNamed(AppRoutes.dashboard);
     });
   }
 
   @override
   void dispose() {
+    _navigationTimer?.cancel();
     _controller.dispose();
     super.dispose();
   }
