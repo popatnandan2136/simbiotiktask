@@ -45,91 +45,96 @@ class JobDetailScreen extends StatelessWidget {
       body: Stack(
         children: [
           SingleChildScrollView(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 100),
+            padding: const EdgeInsets.only(
+              left: 20,
+              right: 20,
+              top: 10,
+              bottom: 100,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Top Hero Card detailing Job
                 Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(24),
-                    decoration: BoxDecoration(
-                      color: AppColors.card,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppColors.secondary.withOpacity(0.05),
-                          blurRadius: 15,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        // Hero Title
-                        Hero(
-                          tag: 'title-${job.slug}',
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Text(
-                              job.title,
-                              style: const TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.primary,
-                              ),
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    color: AppColors.card,
+                    borderRadius: BorderRadius.circular(20),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.secondary.withOpacity(0.05),
+                        blurRadius: 15,
+                        offset: const Offset(0, 8),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Hero Title
+                      Hero(
+                        tag: 'title-${job.slug}',
+                        child: Material(
+                          color: Colors.transparent,
+                          child: Text(
+                            job.title,
+                            style: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.primary,
                             ),
                           ),
                         ),
-                        const SizedBox(height: 10),
-                        // Hero Company
-                        Hero(
-                          tag: 'company-${job.slug}',
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Text(
-                              job.companyName,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: AppColors.secondary,
-                              ),
+                      ),
+                      const SizedBox(height: 10),
+                      // Hero Company
+                      Hero(
+                        tag: 'company-${job.slug}',
+                        child: Material(
+                          color: Colors.transparent,
+                          child: Text(
+                            job.companyName,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.secondary,
                             ),
                           ),
                         ),
-                        const SizedBox(height: 14),
-                        // Hero Location
-                        Hero(
-                          tag: 'location-${job.slug}',
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Row(
-                              children: [
-                                const Icon(
-                                  Icons.location_on_outlined,
-                                  size: 18,
-                                  color: AppColors.grey,
-                                ),
-                                const SizedBox(width: 6),
-                                Expanded(
-                                  child: Text(
-                                    job.location,
-                                    style: const TextStyle(
-                                      fontSize: 14,
-                                      color: AppColors.grey,
-                                    ),
+                      ),
+                      const SizedBox(height: 14),
+                      // Hero Location
+                      Hero(
+                        tag: 'location-${job.slug}',
+                        child: Material(
+                          color: Colors.transparent,
+                          child: Row(
+                            children: [
+                              const Icon(
+                                Icons.location_on_outlined,
+                                size: 18,
+                                color: AppColors.grey,
+                              ),
+                              const SizedBox(width: 6),
+                              Expanded(
+                                child: Text(
+                                  job.location,
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    color: AppColors.grey,
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
+                ),
                 const SizedBox(height: 24),
-                
+
                 // Description header
                 const Text(
                   'Job Description',
@@ -157,15 +162,9 @@ class JobDetailScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       margin: Margins.only(top: 16, bottom: 8),
                     ),
-                    "p": Style(
-                      margin: Margins.only(bottom: 12),
-                    ),
-                    "ul": Style(
-                      margin: Margins.only(bottom: 12),
-                    ),
-                    "li": Style(
-                      margin: Margins.only(bottom: 6),
-                    ),
+                    "p": Style(margin: Margins.only(bottom: 12)),
+                    "ul": Style(margin: Margins.only(bottom: 12)),
+                    "li": Style(margin: Margins.only(bottom: 6)),
                   },
                 ),
               ],
@@ -194,7 +193,10 @@ class JobDetailScreen extends StatelessWidget {
                 height: 54,
                 child: ElevatedButton.icon(
                   onPressed: _launchUrl,
-                  icon: const Icon(Icons.launch_rounded, color: AppColors.textLight),
+                  icon: const Icon(
+                    Icons.launch_rounded,
+                    color: AppColors.textLight,
+                  ),
                   label: const Text(
                     'Apply Now',
                     style: TextStyle(

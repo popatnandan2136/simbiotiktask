@@ -21,7 +21,9 @@ class ApiService {
         throw HttpException('Server error: ${response.statusCode}');
       }
     } on SocketException {
-      throw const SocketException('No Internet Connection. Please check your network.');
+      throw const SocketException(
+        'No Internet Connection. Please check your network.',
+      );
     } on TimeoutException {
       throw TimeoutException('Connection timed out. Please try again.');
     } on FormatException {

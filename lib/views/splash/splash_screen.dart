@@ -36,7 +36,11 @@ class _SplashScreenState extends State<SplashScreen>
     _logoScale = Tween<double>(begin: 0.7, end: 1.0).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: const Interval(0.067, 0.4, curve: Curves.easeOutBack), // starts at 200ms (200/3000 = 0.067)
+        curve: const Interval(
+          0.067,
+          0.4,
+          curve: Curves.easeOutBack,
+        ), // starts at 200ms (200/3000 = 0.067)
       ),
     );
 
@@ -50,41 +54,49 @@ class _SplashScreenState extends State<SplashScreen>
     _appNameOpacity = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: const Interval(0.4, 0.533, curve: Curves.easeIn), // starts at 1200ms (1200/3000 = 0.4)
+        curve: const Interval(
+          0.4,
+          0.533,
+          curve: Curves.easeIn,
+        ), // starts at 1200ms (1200/3000 = 0.4)
       ),
     );
 
-    _appNameOffset = Tween<Offset>(
-      begin: const Offset(0, 0.3),
-      end: Offset.zero,
-    ).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: const Interval(0.4, 0.533, curve: Curves.easeOut),
-      ),
-    );
+    _appNameOffset =
+        Tween<Offset>(begin: const Offset(0, 0.3), end: Offset.zero).animate(
+          CurvedAnimation(
+            parent: _controller,
+            curve: const Interval(0.4, 0.533, curve: Curves.easeOut),
+          ),
+        );
 
     _taglineOpacity = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: const Interval(0.533, 0.667, curve: Curves.easeIn), // starts at 1600ms (1600/3000 = 0.533)
+        curve: const Interval(
+          0.533,
+          0.667,
+          curve: Curves.easeIn,
+        ), // starts at 1600ms (1600/3000 = 0.533)
       ),
     );
 
-    _taglineOffset = Tween<Offset>(
-      begin: const Offset(0, 0.3),
-      end: Offset.zero,
-    ).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: const Interval(0.533, 0.667, curve: Curves.easeOut),
-      ),
-    );
+    _taglineOffset =
+        Tween<Offset>(begin: const Offset(0, 0.3), end: Offset.zero).animate(
+          CurvedAnimation(
+            parent: _controller,
+            curve: const Interval(0.533, 0.667, curve: Curves.easeOut),
+          ),
+        );
 
     _loadingOpacity = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: const Interval(0.667, 0.8, curve: Curves.easeIn), // starts at 2000ms (2000/3000 = 0.667)
+        curve: const Interval(
+          0.667,
+          0.8,
+          curve: Curves.easeIn,
+        ), // starts at 2000ms (2000/3000 = 0.667)
       ),
     );
 
@@ -164,7 +176,7 @@ class _SplashScreenState extends State<SplashScreen>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Spacer(flex: 3),
-                    
+
                     // Center Logo with Scale & Fade Animation
                     FadeTransition(
                       opacity: _logoOpacity,
@@ -228,7 +240,7 @@ class _SplashScreenState extends State<SplashScreen>
                         ),
                       ),
                     ),
-                    
+
                     const Spacer(flex: 2),
 
                     // Modern Loading Indicator

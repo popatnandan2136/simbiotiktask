@@ -117,11 +117,17 @@ class JobCard extends StatelessWidget {
                     ),
                     child: AnimatedSwitcher(
                       duration: const Duration(milliseconds: 300),
-                      transitionBuilder: (Widget child, Animation<double> animation) {
-                        return ScaleTransition(scale: animation, child: child);
-                      },
+                      transitionBuilder:
+                          (Widget child, Animation<double> animation) {
+                            return ScaleTransition(
+                              scale: animation,
+                              child: child,
+                            );
+                          },
                       child: Icon(
-                        job.isBookmarked ? Icons.favorite : Icons.favorite_border,
+                        job.isBookmarked
+                            ? Icons.favorite
+                            : Icons.favorite_border,
                         key: ValueKey<bool>(job.isBookmarked),
                         color: job.isBookmarked ? Colors.red : AppColors.grey,
                         size: 24,

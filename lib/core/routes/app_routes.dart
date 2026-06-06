@@ -10,10 +10,7 @@ class AppRoutes {
   static const String detail = '/detail';
 
   static List<GetPage> pages = [
-    GetPage(
-      name: splash,
-      page: () => const SplashScreen(),
-    ),
+    GetPage(name: splash, page: () => const SplashScreen()),
     GetPage(
       name: dashboard,
       page: () => JobDashboardScreen(),

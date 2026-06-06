@@ -37,10 +37,7 @@ class EmptyView extends StatelessWidget {
             const Text(
               'Try another keyword or search term.',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 15,
-                color: AppColors.grey,
-              ),
+              style: TextStyle(fontSize: 15, color: AppColors.grey),
             ),
           ],
         ),

@@ -44,10 +44,7 @@ class ErrorView extends StatelessWidget {
             Text(
               errorMessage,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 15,
-                color: AppColors.grey,
-              ),
+              style: const TextStyle(fontSize: 15, color: AppColors.grey),
             ),
             const SizedBox(height: 28),
             SizedBox(

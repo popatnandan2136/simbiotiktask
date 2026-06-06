@@ -30,14 +30,14 @@ class JobController extends GetxController {
       isLoading(true);
       hasError(false);
       errorMessage('');
-      
+
       final fetchedJobs = await _apiService.fetchJobs();
-      
+
       // Map bookmark state
       for (var job in fetchedJobs) {
         job.isBookmarked = bookmarkedSlugs.contains(job.slug);
       }
-      
+
       jobs.assignAll(fetchedJobs);
       filteredJobs.assignAll(fetchedJobs);
     } catch (e) {
@@ -56,7 +56,9 @@ class JobController extends GetxController {
       filteredJobs.assignAll(
         jobs.where((job) {
           final titleMatch = job.title.toLowerCase().contains(lowercaseQuery);
-          final companyMatch = job.companyName.toLowerCase().contains(lowercaseQuery);
+          final companyMatch = job.companyName.toLowerCase().contains(
+            lowercaseQuery,
+          );
           return titleMatch || companyMatch;
         }).toList(),
       );
@@ -90,7 +92,7 @@ class JobController extends GetxController {
       job.isBookmarked = true;
       bookmarkedSlugs.add(job.slug);
     }
-    
+
     // Refresh lists to trigger UI update
     jobs.refresh();
     filteredJobs.refresh();

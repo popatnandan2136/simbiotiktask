@@ -88,10 +88,16 @@ class JobDashboardScreen extends StatelessWidget {
                     decoration: InputDecoration(
                       hintText: 'Search by job title or company...',
                       hintStyle: const TextStyle(color: AppColors.grey),
-                      prefixIcon: const Icon(Icons.search_rounded, color: AppColors.primary),
+                      prefixIcon: const Icon(
+                        Icons.search_rounded,
+                        color: AppColors.primary,
+                      ),
                       suffixIcon: searchController.text.isNotEmpty
                           ? IconButton(
-                              icon: const Icon(Icons.clear_rounded, color: AppColors.grey),
+                              icon: const Icon(
+                                Icons.clear_rounded,
+                                color: AppColors.grey,
+                              ),
                               onPressed: () {
                                 searchController.clear();
                                 controller.searchJobs('');
