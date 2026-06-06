@@ -50,9 +50,7 @@ class JobDetailScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Top Hero Card detailing Job
-                Hero(
-                  tag: 'card-${job.slug}',
-                  child: Container(
+                Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(24),
                     decoration: BoxDecoration(
@@ -130,7 +128,6 @@ class JobDetailScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                ),
                 const SizedBox(height: 24),
                 
                 // Description header
